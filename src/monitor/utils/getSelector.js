@@ -16,7 +16,7 @@ function getSelectors(path) {
     }).join(' ');
 }
 
-export default function (pathOrTarget) {
+export default function getSelector (pathOrTarget) {
     if (Array.isArray(pathOrTarget)) {//可能是一个数组
         return getSelectors(pathOrTarget);
     }else{//也有可能是一个对象

@@ -12,14 +12,24 @@
 <body>
     <div id="container">
         <div class="content main" style="width:600px;word-wrap: break-word">
+            <!-- <p style="color:red">hello</p> -->
+            <button id="clickBtn" onclick="clickMe()">点我</button>
 
         </div>
     </div>
     <script>
-        document.addEventListener('DOMContentLoaded', () => {
+        function clickMe() {
             let start = Date.now();
-            while (Date.now - start < 1000) { }
-        })
+            while(Date.now()-start < 1000); // 延迟一秒
+        }
+        setTimeout(()=>{
+            let content = document.getElementsByClassName('content')[0];
+            let h1 = document.createElement('h1');
+            h1.innerHTML = '我是这个页面中最有意义的内容';
+            h1.setAttribute('elementtiming','meaningful');//elementtiming 加了这个属性浏览器就能判断这是最有意义的元素了
+            content.appendChild(h1)
+        },2000)
+
     </script>
 </body>
 
