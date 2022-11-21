@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>前端监控SDK</title>
+    <!-- <link rel="stylesheet" href="/someLink.css" /> -->
+</head>
+
+<body>
+    <div id="container">
+        <div class="content">
+            <input id="successBtn" type="button" value="ajax成功请求" onclick="sendSuccess()"/>
+            <input id="errorBtn" type="button" value="ajax失败请求" onclick="sendError()"/>
+        </div>
+    </div>
+    <script>
+        function sendSuccess(){
+            let xhr = new XMLHttpRequest;
+            xhr.open('GET','/success',true);
+            xhr.responseType = 'json';
+            xhr.onload = function(){
+                console.log(xhr.response)
+            };
+            xhr.send(`name=atlas`);
+
+        }
+        function sendError(){
+            let xhr = new XMLHttpRequest;
+            xhr.open('POST','/error',true);
+            xhr.responseType = 'json';
+            xhr.onload = function(){
+                console.log(xhr.response)
+            };
+            xhr.onerror = function (error){
+                console.log(error);
+            }
+            xhr.send(`name=atlas`);
+        }
+    </script>
+</body>
+
+</html>

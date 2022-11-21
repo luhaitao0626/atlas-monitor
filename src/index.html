@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>前端监控SDK</title>
+    <!-- <link rel="stylesheet" href="/someLink.css" /> -->
+</head>
+
+<body>
+    <div id="container">
+        <div class="content main" style="width:600px;word-wrap: break-word">
+
+        </div>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            let start = Date.now();
+            while (Date.now - start < 1000) { }
+        })
+    </script>
+</body>
+
+</html>
